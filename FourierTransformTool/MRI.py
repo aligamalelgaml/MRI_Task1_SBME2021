@@ -1,0 +1,123 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'MRI.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(870, 686)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.frame_3 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_3.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame_3)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label = QtWidgets.QLabel(self.frame_3)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.horizontalLayout.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(self.frame_3)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout.addWidget(self.label_2)
+        self.gridLayout_2.addLayout(self.horizontalLayout, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.frame_3)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout.setObjectName("gridLayout")
+        self.widget = ImageView(self.frame)
+        self.widget.setObjectName("widget")
+        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
+        self.widget_2 = ImageView(self.frame)
+        self.widget_2.setObjectName("widget_2")
+        self.gridLayout.addWidget(self.widget_2, 0, 1, 1, 1)
+        self.verticalLayout.addWidget(self.frame)
+        self.horizontalLayout_2.addLayout(self.verticalLayout)
+        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_2.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.frame_2.setSizeIncrement(QtCore.QSize(10, 25))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.comboBox = QtWidgets.QComboBox(self.frame_2)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.gridLayout_3.addWidget(self.comboBox, 0, 0, 1, 1)
+        self.horizontalLayout_2.addWidget(self.frame_2)
+        self.gridLayout_4.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 870, 26))
+        self.menubar.setObjectName("menubar")
+        self.menufile = QtWidgets.QMenu(self.menubar)
+        self.menufile.setObjectName("menufile")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionLoad = QtWidgets.QAction(MainWindow)
+        self.actionLoad.setObjectName("actionLoad")
+        self.menufile.addAction(self.actionLoad)
+        self.menubar.addAction(self.menufile.menuAction())
+
+        self.retranslateUi(MainWindow)
+        self.comboBox.setCurrentIndex(-1)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "Image "))
+        self.label_2.setText(_translate("MainWindow", "parameter"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "Magnitude"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "Phase"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "Real"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "Imaginary"))
+        self.menufile.setTitle(_translate("MainWindow", "File"))
+        self.actionLoad.setText(_translate("MainWindow", "Load"))
+from pyqtgraph import ImageView
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
